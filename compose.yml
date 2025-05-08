@@ -1,15 +1,15 @@
-version: "3.9"
-
 services:
     final-hour:
-        build: .
+        build:
+            context: .
+            target: final-hour-prod
         restart: unless-stopped
         environment:
-            - FH_NO_DISCORD
+            - FH_NO_DISCORD=1
         volumes:
-            - ./database.sqlite3:/app/database.sqlite3
-            - ./maps:/app/maps
-            - ./sm.txt:/app/sm.txt
-            - ./authorised_names:/app/authorised_names
+            - ./database.sqlite3:/home/node/app/database.sqlite3
+            - ./maps:/home/node/app/maps
+            - ./sm.txt:/home/node/app/sm.txt
+            - ./authorised_names:/home/node/app/authorised_names
         ports:
             - 13000:13000/udp
