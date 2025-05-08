@@ -20,9 +20,9 @@
         }
     },
     "scripts": {
-        "start": "NODE_PATH=./dist node --enable-source-maps dist/server.js",
+        "start": "./bootstrap.sh && NODE_PATH=./dist node --enable-source-maps dist/server.js",
         "build": "tsc -p .",
-        "dev": "nodemon server.ts"
+        "dev": "./bootstrap.sh && nodemon server.ts"
     },
     "repository": {
         "type": "git",
