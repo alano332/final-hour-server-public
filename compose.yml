@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+    final-hour:
+        build: .
+        restart: unless-stopped
+        environment:
+            - FH_NO_DISCORD
+        volumes:
+            - ./database.sqlite3:/app/database.sqlite3
+            - ./maps:/app/maps
+            - ./sm.txt:/app/sm.txt
+            - ./authorised_names:/app/authorised_names
+        ports:
+            - 13000:13000/udp
