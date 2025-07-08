@@ -9,7 +9,10 @@
         "ignore": [
             ".git",
             "players/",
-            "maps/"
+            "maps/",
+            "database.sqlite3",
+            "database.sqlite3-journal",
+            "database.sqlite3-*"
         ],
         "watch": [
             "libs/**/*.ts",
